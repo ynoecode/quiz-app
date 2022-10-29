@@ -1,36 +1,38 @@
 /*
 * Google Fonts API
-* 8Font used: Poppins, Comfortaa
+* 8Font used: Montserrat
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*
 * Color Palettes
 * This color palette is from https://colorhunt.co/. 
  */
  :root {
-  --primary-light: #FFC8C8;
-  --primary-dark: #FF9999;
-  --secondary-light: #444F5A;
-  --secondary-dark: #3E4149;
+  --primary-light: #66BFBF;
+  --primary-dark: #FF0063;
+  --secondary-light: #FFFFFF;
+  --secondary-dark: #EAF6F6;
   --white: #FFFAE7;
 }
 
 * {
-  font-family: "Poppins";
-  color: var(--primary-light);
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   background: var(--secondary-light);
+  color: var(--secondary-light);
 }
+
 
 /* * App Title */
 .title-container {
   margin: 50px 0 50px 0;
   text-align: center;
+  color: var(--primary-light) !important;
+  font-weight: 700;
 }
 
 /* * Question Card */
@@ -41,7 +43,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid var(--primary-dark);
+  background: var(--primary-light);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px var(--secondary-dark);
 }
 
 .text-container {
@@ -50,11 +55,29 @@ body {
 
 .answers-container {
   padding: 20px 0 0 0;
+  margin: 0 40px 0 40px;
   text-align: left;
 }
 
 .answer-container {
   padding: 10px 0 0 0;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  margin: 0 10px 0 0;
+  width: 20px;
+  height: 20px;
+  color: var(--primary-dark);
+  background-color: var(--white);
+}
+
+.answer {
+  text-transform: capitalize;
 }
 
 /*
@@ -75,4 +98,10 @@ body {
 
 .font-sm {
   font-size: 10px;
+}
+
+@keyframes moveGradient {
+  0%{ background-position: 0 50%; }
+  50%{ background-position: 100% 50%;}
+  0%{ background-position: 0 50%;}
 }
