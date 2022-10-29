@@ -15,6 +15,7 @@
   --secondary-light: #FFFFFF;
   --secondary-dark: #EAF6F6;
   --white: #FFFAE7;
+  --black: #000000;
 }
 
 * {
@@ -37,7 +38,7 @@ body {
 
 /* * Question Card */
 .question-card {
-  padding: 40px;
+  padding: 40px 40px 0 40px;
   width: 500px;
   margin: auto;
   display: flex;
@@ -72,12 +73,29 @@ body {
   margin: 0 10px 0 0;
   width: 20px;
   height: 20px;
-  color: var(--primary-dark);
   background-color: var(--white);
 }
 
-.answer {
+.answers {
   text-transform: capitalize;
+}
+
+.submit-container {
+  padding: 30px 0 40px 0;
+}
+
+.submit-btn {
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  border: none;
+  color: var(--white);
+  background: var(--primary-dark);
 }
 
 /*
