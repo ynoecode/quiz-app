@@ -1,10 +1,10 @@
+import { data } from "/src/models/Questions.js";
+
 /**
  * ? Variables
- * ? 1. Global (API URL)
- * ? 2. Elements
- * ? 3. Initial Values
+ * ? 1. Elements
+ * ? 2. Initial Values
  */
-const triviaAPIURL = "https://the-trivia-api.com/api/questions?categories=science&limit=1&difficulty=easy"
 
 const questionEl = document.querySelector(".question")
 const radioEl = document.querySelectorAll(".radio")
@@ -12,28 +12,24 @@ const answerA = document.querySelector(".answer_a")
 const answerB = document.querySelector(".answer_b")
 const answerC = document.querySelector(".answer_c")
 const answerD = document.querySelector(".answer_d")
+const answerInA = document.querySelector(".answer_a_in")
+const answerInB = document.querySelector(".answer_b_in")
+const answerInC = document.querySelector(".answer_c_in")
+const answerInD = document.querySelector(".answer_d_in")
 const submitBtnEl = document.querySelector(".submit-btn")
+const totalQuestionsEl = document.querySelector(".total-questions")
+const correctAnswersEl = document.querySelector(".correct-answers")
 
-let currentQuiz = 0;
+let currentQuiz = Math.floor(Math.random() * data.length);
 let currentScore = 0;
 
-fetchQuestion()
-
-/**
- * ? Function
- * ? 1. Fetching data from the API: The Trivia API.
- */
-function fetchQuestion() {
-  const response = fetch(triviaAPIURL)
-    .then(response => response.json())
-    .then((data) => dispalyQuestions(data))
-}
+dispalyQuestions()
 
 /**
  * ? Function
  * ? 1. Displaying question from the API.
  */
-function dispalyQuestions(data) {
+function dispalyQuestions() {
 
   // ? Initializing clear radio buttons, unchecked.
   deseclectAnswers()
@@ -55,16 +51,22 @@ function dispalyQuestions(data) {
     }
   ]
 
-  const currentQuizData = questionData[currentQuiz]
-  questionEl.innerText = currentQuizData.question  
+  questionEl.innerText = questionData[0].question
 
-  answerA.innerText = currentQuizData.answers[0][0]
-  answerB.innerText = currentQuizData.answers[0][1]
-  answerC.innerText = currentQuizData.answers[0][2]
-  answerD.innerText = currentQuizData.answers[0][3]
+  answerA.innerText = questionData[0].answers[0][0]
+  answerB.innerText = questionData[0].answers[0][1]
+  answerC.innerText = questionData[0].answers[0][2]
+  answerD.innerText = questionData[0].answers[0][3]
 
-  return questionData;
+  answerInA.setAttribute("id", questionData[0].answers[0][0]);
+  answerInB.setAttribute("id", questionData[0].answers[0][1]);
+  answerInC.setAttribute("id", questionData[0].answers[0][2]);
+  answerInD.setAttribute("id", questionData[0].answers[0][3]);
+
+
+  totalQuestionsEl.innerText = data.length
 }
+
 
 /**
  * ? Function
@@ -90,19 +92,22 @@ function deseclectAnswers() {
 }
 
 submitBtnEl.addEventListener("click", () => {
-  const answer = getSelected()
-  const data = dispalyQuestions()
-  
-  if (answer) {
-    if (answer === data[currentQuiz].correct) {
-      currentScore++
-      console.log(currentScore)
-    }
+  const selectedAnswer = getSelected()
 
-    currentQuiz++
-    if (currentQuiz < questionData.length) {
-      dispalyQuestions()
-      console.log(currentQuiz)
-    }
+  if (selectedAnswer === data[currentQuiz].correctAnswer) {
+    currentScore++
+  }
+  correctAnswersEl.innerText = currentScore
+
+  currentQuiz++
+
+  console.log(currentQuiz + "/" + data.length)
+
+  if (currentQuiz < data.length) {
+    dispalyQuestions()
+  } else {
+    alert("Quiz completed!")
+
+    currentScore = 0
   }
 })
