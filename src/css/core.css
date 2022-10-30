@@ -14,7 +14,7 @@
   --primary-dark: #FF0063;
   --secondary-light: #FFFFFF;
   --secondary-dark: #EAF6F6;
-  --white: #FFFAE7;
+  --white: #FFF;
   --black: #000000;
 }
 
@@ -39,8 +39,8 @@ body {
 /* * Question Card */
 .question-card {
   padding: 40px 40px 0 40px;
-  width: 500px;
-  margin: auto;
+  width: 70%;
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,7 +56,7 @@ body {
 
 .answers-container {
   padding: 20px 0 0 0;
-  margin: 0 40px 0 40px;
+  margin: auto;
   text-align: left;
 }
 
@@ -71,8 +71,6 @@ body {
 
 .radio {
   margin: 0 10px 0 0;
-  width: 20px;
-  height: 20px;
   background-color: var(--white);
 }
 
@@ -81,12 +79,13 @@ body {
 }
 
 .submit-container {
-  padding: 30px 0 40px 0;
+  padding: 20px 0 20px 0;
+  text-align: center;
 }
 
 .submit-btn {
   height: 50px;
-  width: 100%;
+  width: 30%;
   border: none;
   border-radius: 10px;
 }
@@ -96,6 +95,43 @@ body {
   border: none;
   color: var(--white);
   background: var(--primary-dark);
+}
+
+.status {
+  display: flex;
+  justify-content: center;  
+}
+
+.status-container {
+  margin: 0 0 20px 0;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+}
+
+/* * Result Card */
+.result-card {
+  height: 100px;
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--primary-dark);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px var(--secondary-dark);
+}
+
+.ts-container {
+  text-align: center ;
+}
+
+.total-score {
+  padding: 5px 0 0 0;
 }
 
 /*
@@ -118,8 +154,6 @@ body {
   font-size: 10px;
 }
 
-@keyframes moveGradient {
-  0%{ background-position: 0 50%; }
-  50%{ background-position: 100% 50%;}
-  0%{ background-position: 0 50%;}
+.font-bold {
+  font-weight: 700;
 }
