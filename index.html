@@ -12,13 +12,11 @@
 		<!-- Stylesheet -->
 		<link rel="stylesheet" href="/src/css/core.css" />
 		<!-- Script -->
-		<script src="/src/js/script.js" defer></script>
+		<script type="module" src="/src/js/script.js" defer></script>
+		<script type="module" src="/src/models/Questions.js" defer></script>
 	</head>
 	<body>
 		<main class="main">
-			<section class="title-container">
-				<div class="title font-xl">Quiz App</div>
-			</section>
 			<section class="question-card">
 				<div class="text-container">
 					<div class="question font-lg"></div>
@@ -26,24 +24,35 @@
 				</div>
 				<div class="answers-container">
 					<div class="radio-button answer-container">
-						<input type="radio" class="radio" id="a" name="answer" />
+						<input type="radio" class="radio answer_a_in" id="a" name="answer" />
 						<label class="answer_a answers" for="a"></label>
 					</div>
 					<div class="radio-button answer-container">
-						<input type="radio" class="radio" id="b" name="answer" />
+						<input type="radio" class="radio answer_b_in" id="b" name="answer" />
 						<label class="answer_b answers" for="b"></label>
 					</div>
 					<div class="radio-button answer-container">
-						<input type="radio" class="radio" id="c" name="answer" />
+						<input type="radio" class="radio answer_c_in" id="c" name="answer" />
 						<label class="answer_c answers" for="c"></label>
 					</div>
 					<div class="radio-button answer-container">
-						<input type="radio" class="radio" id="d" name="answer" />
+						<input type="radio" class="radio answer_d_in" id="d" name="answer" />
 						<label class="answer_d answers" for="d"></label>
 					</div>
 				</div>
 				<div class="submit-container">
 					<button class="submit-btn font-md">Submit</button>
+				</div>
+				<div class="status">
+					<div class="status-container">
+						<div class="question-status font-lg correct"></div>
+					</div>
+				</div>
+			</section>
+			<section class="result-card">
+				<div class="ts-container">
+					<div class="result-title-container font-lg font-bold">Result Card</div>
+					<div class="total-score font-lg"><span class="correct-answers">0 </span>/ <span class="total-questions">0</span></div>
 				</div>
 			</section>
 		</main>
