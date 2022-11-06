@@ -1,6 +1,6 @@
 <!-- Welcoming Section  -->
 <div align="center">
-  <img src="https://i.imgur.com/YQzkkjS.png" alt="App Name"/>
+  
 </div>
 <hr />
 
