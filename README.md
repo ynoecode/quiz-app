@@ -50,7 +50,7 @@
 </div>
 
 <div align="center">
-   <img src="https://i.imgur.com/klCvIgS.jpg" alt="Preview Image"/>
+   
 </div>
 <br />
 
