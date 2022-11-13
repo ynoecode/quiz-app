@@ -1,9 +1,9 @@
 /*
 * Google Fonts API
-* 8Font used: Montserrat
+* 8Font used: Nunito
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 /*
 * Color Palettes
@@ -14,17 +14,26 @@
   --primary-dark: #FF0063;
   --secondary-light: #FFFFFF;
   --secondary-dark: #EAF6F6;
+  --orange: #E45826;
   --white: #FFF;
   --black: #000000;
+  --background-dark: #383A3D;
 }
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
-  background: var(--secondary-light);
-  color: var(--secondary-light);
+  background-image: url("/src/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--black);  
+}
+
+main {
+  min-height: 100%;
+  width: 100%;
 }
 
 
@@ -39,25 +48,29 @@ body {
 /* * Question Card */
 .question-card {
   padding: 40px 40px 0 40px;
-  width: 70%;
+  width: 60%;
   margin: 60px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--primary-light);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 8px var(--secondary-dark);
+  background: var(--secondary-light);
+  border: 3px solid var(--black);
+  box-shadow: 0px 5px var(--black);
 }
 
 .text-container {
   text-align: center;
 }
 
+.question {
+  font-size: 25px !important;
+}
+
 .answers-container {
   padding: 20px 0 0 0;
   margin: auto;
   text-align: left;
+  font-size: 20px;
 }
 
 .answer-container {
@@ -85,16 +98,16 @@ body {
 
 .submit-btn {
   height: 50px;
-  width: 30%;
-  border: none;
-  border-radius: 10px;
+  width: 100%;
+  background: var(--white);
+  border: 3px solid var(--black);
 }
 
 .submit-btn:hover {
   cursor: pointer;
-  border: none;
   color: var(--white);
-  background: var(--primary-dark);
+  background: var(--black);
+  border: 3px solid var(--black);
 }
 
 .status {
@@ -115,15 +128,14 @@ body {
 /* * Result Card */
 .result-card {
   height: 100px;
-  width: 500px;
+  width: 70%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--primary-dark);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 8px var(--secondary-dark);
+  background: var(--secondary-light);
+  border: 3px solid var(--black);
+  box-shadow: 0px 5px var(--black);
 }
 
 .ts-container {
@@ -156,4 +168,25 @@ body {
 
 .font-bold {
   font-weight: 700;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+}
+
+.footer-content {
+  color: var(--background-light);
+  padding: 10px 10px 10px 10px;
+  background: var(--background-dark);
+}
+
+.links {
+  color: var(--orange);
+  text-decoration: none;
 }
