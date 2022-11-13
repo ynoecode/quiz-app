@@ -1,0 +1,192 @@
+/*
+* Google Fonts API
+* 8Font used: Nunito
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/*
+* Color Palettes
+* This color palette is from https://colorhunt.co/. 
+ */
+ :root {
+  --primary-light: #66BFBF;
+  --primary-dark: #FF0063;
+  --secondary-light: #FFFFFF;
+  --secondary-dark: #EAF6F6;
+  --orange: #E45826;
+  --white: #FFF;
+  --black: #000000;
+  --background-dark: #383A3D;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--black);  
+}
+
+main {
+  min-height: 100%;
+  width: 100%;
+}
+
+
+/* * App Title */
+.title-container {
+  margin: 50px 0 50px 0;
+  text-align: center;
+  color: var(--primary-light) !important;
+  font-weight: 700;
+}
+
+/* * Question Card */
+.question-card {
+  padding: 40px 40px 0 40px;
+  width: 60%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--secondary-light);
+  border: 3px solid var(--black);
+  box-shadow: 0px 5px var(--black);
+}
+
+.text-container {
+  text-align: center;
+}
+
+.question {
+  font-size: 25px !important;
+}
+
+.answers-container {
+  padding: 20px 0 0 0;
+  margin: auto;
+  text-align: left;
+  font-size: 20px;
+}
+
+.answer-container {
+  padding: 10px 0 0 0;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  margin: 0 10px 0 0;
+  background-color: var(--white);
+}
+
+.answers {
+  text-transform: capitalize;
+}
+
+.submit-container {
+  padding: 20px 0 20px 0;
+  text-align: center;
+}
+
+.submit-btn {
+  height: 50px;
+  width: 100%;
+  background: var(--white);
+  border: 3px solid var(--black);
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--black);
+  border: 3px solid var(--black);
+}
+
+.status {
+  display: flex;
+  justify-content: center;  
+}
+
+.status-container {
+  margin: 0 0 20px 0;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+}
+
+/* * Result Card */
+.result-card {
+  height: 100px;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--secondary-light);
+  border: 3px solid var(--black);
+  box-shadow: 0px 5px var(--black);
+}
+
+.ts-container {
+  text-align: center ;
+}
+
+.total-score {
+  padding: 5px 0 0 0;
+}
+
+/*
+ * Global Styling
+ * 1. Texts
+*/
+.font-xl {
+  font-size: 30px;
+}
+
+.font-lg {
+  font-size: 20px;
+}
+
+.font-md {
+  font-size: 15px;
+}
+
+.font-sm {
+  font-size: 10px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+}
+
+.footer-content {
+  color: var(--background-light);
+  padding: 10px 10px 10px 10px;
+  background: var(--background-dark);
+}
+
+.links {
+  color: var(--orange);
+  text-decoration: none;
+}
