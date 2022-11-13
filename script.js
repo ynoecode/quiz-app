@@ -1,4 +1,4 @@
-import { data } from "Questions.js";
+import { data } from "./Questions.js";
 
 /**
  * ? Variables
